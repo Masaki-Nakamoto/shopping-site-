@@ -1,0 +1,91 @@
+DBテーブルズ
+
+usersテーブル
+CREATE TABLE users (
+  id SERIAL NOT NULL PRIMARY KEY ,
+  name VARCHAR( 25 ) NOT NULL ,
+  zipcode VARCHAR( 25 ) NOT NULL ,
+  address VARCHAR( 50 ) NOT NULL ,
+  phonenum VARCHAR( 20 ) NOT NULL ,
+  email VARCHAR( 35 ) NOT NULL ,
+  password VARCHAR( 60 ) NOT NULL ,
+  UNIQUE (email)
+);
+
+productsテーブル
+CREATE TABLE products (
+ id SERIAL NOT NULL PRIMARY KEY ,
+ productname VARCHAR( 25 ) NOT NULL ,
+ price VARCHAR( 25 ) NOT NULL ,
+ images_id INTEGER NOT NULL ,
+ FOREIGN KEY (images_id) references images(id)
+);
+
+INSERT INTO products (productname, price) 
+VALUES 
+('ブーケA', '3,000'),
+('ブーケB', '5,000'),
+('ブーケC', '7,000'),
+('アレンジA', '4,000'),
+('アレンジB', '6,000'),
+('ドライブーケA', '9,000');
+
+imagesテーブル
+CREATE TABLE images (
+ id SERIAL NOT NULL PRIMARY KEY ,
+ imagename VARCHAR( 25 ) NOT NULL
+);
+ALTER TABLE images
+ADD image bytea NULL;
+
+"INSERT INTO images (imagename) 
+VALUES 
+('ブーケA'),
+('ブーケB'),
+('ブーケC'),
+('アレンジA'),
+('アレンジB'),
+('ドライブーケA');
+
+
+cartsテーブル なし
+CREATE TABLE carts (
+ id SERIAL NOT NULL PRIMARY KEY
+ products_id INTEGER NOT NULL ,
+ FOREIGN KEY (products_id) references products(id),
+ images_id INTEGER NOT NULL ,
+ FOREIGN KEY (images_id) references images(id)
+);
+
+ordersテーブル
+CREATE TABLE orders (
+ id SERIAL NOT NULL PRIMARY KEY ,
+ users_id INTEGER NOT NULL ,
+ FOREIGN KEY (users_id) references users(id),
+ products_id INTEGER NOT NULL ,
+ FOREIGN KEY (products_id) references products(id),
+ images_id INTEGER NOT NULL ,
+ FOREIGN KEY (images_id) references images(id)
+);
+
+
+メモメモ
+client.exec_params("INSERT INTO users (name, zipcode, address, phonenum, email, password) VALUES ('コザ二郎', '11111', '沖縄市コザ', 111-222-333, kozajirou@mail.com, kozajirou)")
+
+client.exec_params("INSERT INTO images (imagename) VALUES ('ブーケA') SELECT bytea_import('/img/bouquetB.jpg')")
+
+
+UPDATE images
+  SET image = (SELECT bytea_import('/img/bouquetA.jpg'))
+WHERE id = 3;
+
+ALTER TABLE products
+ADD images_id INTEGER NULL;
+
+ALTER TABLE products
+ALTER COLUMN ;
+
+ALTER TABLE products 
+DROP COLUMN images_id;
+
+

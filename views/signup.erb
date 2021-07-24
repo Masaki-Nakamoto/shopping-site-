@@ -1,0 +1,34 @@
+<div class="signup">
+<h2>会員登録</h2>
+
+<form action="/signup" method="post">
+  <div class="signupform">
+    <label for="name">名前: </label>
+    <input type="text" name="name">
+  </div>
+  <div>
+    <label for="zipcode">郵便番号: </label>
+    <input type="text" name="zipcode">
+  </div>
+  <div class="signupform">
+    <label for="address">住所: </label>
+    <input type="text" name="address">
+  </div>
+  <div class="signupform">
+    <label for="phonenum">電話番号: </label>
+    <input type="text" name="phonenum">
+  </div>
+  <div class="signupform">
+    <label for="email">メールアドレス: </label>
+    <input type="email" name="email">
+  </div>
+  <div class="signupform">
+    <label for="password">パスワード: </label>
+    <input type="password" name="password"><%# %>
+  </div>
+
+  <input type="submit" value="会員登録して次へ">
+</form>
+
+<p class="signupform"><a href="/login">既に登録された方はこちら</a></p>
+</div>

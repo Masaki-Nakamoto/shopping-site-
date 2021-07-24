@@ -1,0 +1,58 @@
+
+  # progate ruby復習より
+  # item.rb(仮)
+  class Item
+    attr_accerssor:name
+    attr_accerssor:price
+
+    def initialize(name:, price:)
+      # self.name = "ブーケA"
+      # self.price = 3,000
+      self.name = name
+      self.price = price
+    end
+
+    def info
+      # puts "ブーケAの詳細"
+      # return "#{itemName}の詳細"
+      return "#{self.name}の詳細 #{self.price}円"
+    end
+
+    def get_total_price(count)
+      total_price = self.price * count
+      # if count >= 3
+      #   total_price -= 100
+      # end
+      return total_price
+    end
+
+  end
+  # item.rb(仮)
+
+  # 呼び出し方イメージ
+  # item1 = Item.new
+  # item1.name = ブーケA
+  # item1.price = 3,000
+  # puts item1.info("ブーケA")
+  # puts item1.info # selfより initializeも
+  
+  # item2 = Item.new(name:"ブーケB", price:5,000)
+  # puts item2.info
+  # 呼び出し方イメージ
+  
+  # cart.rb(仮)
+  # require "./item"
+  # item1 = Item.new(name:ブーケA, price:3,000)
+  # item2 = Item.new(name:ブーケB, price:5,000)
+  # item3 = Item.new(name:ブーケC, price:7,000)
+  # item4 = Item.new(name:アレンジA, price:4,000)
+  # item5 = Item.new(name:アレンジB, price:6,000)
+  # item6 = Item.new(name:ドライブーケA, price:9,000)
+
+  # items = [item1, item2, item3, item4, item5, item6]
+  # items.each do |item|
+  #   puts item.info
+  # end
+  # cart.rb(仮)
+
+  # progate ruby復習より ここまで

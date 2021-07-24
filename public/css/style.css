@@ -1,0 +1,207 @@
+/*CSSが反映されない時は、スーパーリロードをためす。cmd+shift+R */
+/* layout.erb */
+.header-navbar {
+  margin: 0 112px;
+  padding-top: 10px;
+}
+
+.footerLayout {
+  margin-top: 80px;
+}
+.footerPagetop {
+  text-align: end;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 12px;
+  max-width: 1216px;
+}
+
+.footerCopy {
+  color: rgb(185, 181, 174);
+  text-align: center;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 12px;
+  max-width: 1216px;
+}
+/* layout.erb */
+
+/* products.erb */
+.title-copy {
+  padding: 5px 0 10px 0;
+  text-align: center;
+  color: grey;
+}
+
+.main {
+  margin: 12px auto;
+  padding: 8px;
+  max-width: 1216px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.productListGrid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.product {
+  margin: 10px;
+  /* border: 5px solid pink; */
+  height: 525px;
+  border-bottom: 1px solid rgb(185, 181, 174);
+}
+
+.image {
+  /* border: 5px solid rgb(28, 182, 182); */
+  background: rgb(185, 181, 174);
+  height: 400px;
+  margin: 5px;
+}
+
+.productName {
+  padding: 15px 5px;
+  margin: 0;
+}
+
+.productName_Name {
+  color: grey;
+}
+
+.productPrice {
+  padding: 5px 5px;
+}
+.price-price {
+  color: grey;
+}
+.price-price-price {
+  color: grey;
+}
+.price-price-price::before {
+  content: "(";
+  color: gray;
+}
+
+.price-price-price::after {
+  content: ")";
+  color: gray;
+}
+/* products.erb */
+
+/* item.erb */
+/* .itemMain {
+  margin: 24px auto;
+  padding: 8px;
+  max-width: 1216px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+} */
+.itemPage {
+  float: none;
+  margin: 10px 0;
+}
+
+.item1 {
+  width: 720px;
+  min-height: 500px;
+  height: auto;
+  background-color: rgb(85, 78, 78);
+  margin-top: 10px;
+  display: inline-block;
+}
+.item2 {
+  width: 375px;
+  min-height: 500px;
+  height: auto;
+  background-color: white;
+  float: right;
+  margin-top: 10px;
+}
+
+.cartinButton {
+  height: 50px;
+  width: 100%;
+  color: white;
+  background-color: rgb(92, 138, 113);
+  border: 1px solid rgb(92, 138, 113);
+}
+/* item.erb */
+
+/* login.erb */
+#logoutButton, #loginButton { 
+  display: none; 
+}
+
+.login {
+  text-align: center;
+  margin: 0 104px;
+}
+
+.login h2 {
+  border-bottom: 1px solid #dedcdc;
+  margin: 10px;
+  padding: 20px;
+  color: grey;
+}
+
+.loginform{
+  padding: 5px;
+  margin: 5px;
+}
+
+/* signupformと共同 */
+input[type="submit"] {
+  margin: 5px;
+  height: 50px;
+  width: 30%;
+  color: white;
+  background-color: rgb(92, 138, 113);
+  border: 1px solid rgb(92, 138, 113);
+}
+/* signupformと共同 ここまで*/
+
+/* login.erb */
+
+/* signup.erb */
+.signup {
+  text-align: center;
+  margin: 0 104px;
+}
+
+.signup h2 {
+  border-bottom: 1px solid #dedcdc;
+  margin: 10px;
+  padding: 20px;
+  color: grey;
+}
+
+.signupform{
+  padding: 5px;
+  margin: 5px;
+}
+/* signup.erb */
+
+/* cart.erb */
+.cart {
+  text-align: center;
+  margin: 0 104px;
+}
+
+.cart h2 {
+  border-bottom: 1px solid #dedcdc;
+  margin: 10px;
+  padding: 20px;
+  color: grey;
+}
+/* cart.erb */
